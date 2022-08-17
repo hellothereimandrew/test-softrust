@@ -80,7 +80,12 @@
             <re-captcha (resolved)="resolvedCaptcha($event)" siteKey='6LfiQ38hAAAAAGAlnYvSXWFmBVEkVXPSLJCbtKMO'></re-captcha>
         </div>
         <div class="buttons">
-            <button [disabled]="formData.invalid" (click)="submitForm()" type="submit" class="buttons__submit">Отправить письмо!</button>
+            <button 
+                    [disabled]="formData.invalid" 
+                    (click)="submitForm()" 
+                    type="submit" 
+                    class="buttons__submit">Отправить письмо!
+            </button>
         </div>
     </div>
 </body>
