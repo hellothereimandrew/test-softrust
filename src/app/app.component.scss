@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    font-family: "Commissioner-Bold";
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: rgb(98, 98, 98)
+}
+
+.form {
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 0px rgba(34, 60, 80, 0.4);
+    background-color: rgb(235, 235, 235);
+
+    .form-header {
+        margin-bottom: 10px;
+        padding: 5px 5px 5px 10px;
+        font-size: 18px;
+        color: #fff;
+        box-shadow: 5px 5px 5px 0px rgba(34, 60, 80, 0.2);
+        background-color: rgb(195 67 47);
+    }
+    
+    .form-header__error {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .contacts {
+        display: flex;
+
+        .title-container {
+            width: 50%;
+
+            .title-container__item {
+                margin-bottom: 19px;
+            }
+        }
+
+        .inputs {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            .input-container {
+                position: relative;
+                margin-bottom: 13px;
+
+                .input-container__input {
+                    width: 100%;
+                    padding: 4px;
+                    border-radius: 5px;
+                    border: 0;
+                    outline: 0;
+                }
+
+                .input-container__error {
+                    position: absolute;
+                    top: 0;
+                    left: 4px;
+                    font-size: 14px;
+                    color: red;
+                }
+            }
+
+            .input-container__select {
+                padding: 4px;
+                margin-bottom: 13px;
+                border-radius: 5px;
+                border: 0;
+                outline: 0;
+            }
+
+            .input-container__input:last-child {
+                width: 100px;
+            }
+
+            .input-container__code {
+                display: flex;
+
+                .input-container__in {
+                    width: 50%;
+                    padding: 4px;
+                    border-radius: 5px;
+                    text-align: center;
+                    border: 0;
+                    outline: 0;
+                    margin-right: 5px;
+                }
+
+                .input-container__out {
+                    width: 50%;
+                    padding: 4px;
+                    border-radius: 5px;
+                    text-align: center;
+                    border: 0;
+                    outline: 0;
+                }
+            }
+        }
+    }
+
+    .captcha {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5px;
+    }
+
+    .buttons {
+        text-align: center;
+
+        .buttons__submit {
+            margin-top: 5px;
+            padding: 5px 20px 5px 20px;
+            border-radius: 5px;
+            border: 0;
+            background-color: rgb(207, 207, 207);
+        }
+    }
+}
+
+@font-face {
+    font-family: "Commissioner-Regular";
+    src: url("../fonts/Commissioner-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Commissioner-Medium";
+    src: url("../fonts/Commissioner-Medium.ttf");
+}
+
+@font-face {
+    font-family: "Commissioner-Bold";
+    src: url("../fonts/Commissioner-Bold.ttf");
+}

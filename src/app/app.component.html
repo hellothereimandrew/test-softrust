@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="form">
+        <form [formGroup] ="formData">
+            <p class="form-header">Напишите нам</p>
+            <div class="form-header__error" *ngIf="formData.invalid">Перед отправкой формы заполните все поля</div>
+            <div class="contacts">
+                <div class="title-container">
+                    <p class="title-container__item">Ваше имя:</p>
+                    <p class="title-container__item">Ваш Email:</p>
+                    <p class="title-container__item">Ваш телефон:</p>
+                    <p class="title-container__item">Тема:</p>
+                    <p class="title-container__item">Ваше сообщение:</p>
+                    <p class="title-container__item">Цифры:</p>
+                </div>
+                <div class="inputs">
+                    <div class="input-container">
+                        <input
+                        formControlName="name" 
+                        class="input-container__input" 
+                        type="text">
+                        <p *ngIf="!formData.value.name" class="input-container__error">Поле не заполнено</p>
+                    </div>
+
+                    <div class="input-container">
+                        <input 
+                        formControlName="email" 
+                        class="input-container__input" 
+                        type="email" >
+                        <p *ngIf="!formData.value.email" class="input-container__error">Поле не заполнено. Пример: example@mail.ru</p>
+                    </div>
+
+                    <div class="input-container">
+                        <input 
+                        formControlName="phone" 
+                        class="input-container__input" 
+                        type="number">
+                        <p *ngIf="!formData.value.phone" class="input-container__error">Поле не заполнено. Пример: +71234567890</p>
+                    </div>
+
+                    <select class="input-container__select">
+                        <option value="">Техподдержка</option>
+                        <option value="">Продажи</option>
+                        <option value="">Другое</option>
+                        <option value="">Еще один пункт</option>
+                    </select>
+
+                    <div class="input-container">
+                        <input 
+                        formControlName="message" 
+                        class="input-container__input" 
+                        type="text"
+                        placeholder="Введите ваше сообщение">
+                    </div>
+
+                    <div class="input-container__code">
+                        <input 
+                        formControlName="codeIn" 
+                        class="input-container__in" 
+                        type="number"
+                        placeholder="Введите код">
+
+                        <input 
+                        formControlName="codeOut" 
+                        class="input-container__out" 
+                        type="number">
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="captcha" [hidden]="captcha">
+            <re-captcha (resolved)="resolvedCaptcha($event)" siteKey='6LfiQ38hAAAAAGAlnYvSXWFmBVEkVXPSLJCbtKMO'></re-captcha>
+        </div>
+        <div class="buttons">
+            <button [disabled]="formData.invalid" (click)="submitForm()" type="submit" class="buttons__submit">Отправить письмо!</button>
+        </div>
+    </div>
+</body>
+
+</html>
